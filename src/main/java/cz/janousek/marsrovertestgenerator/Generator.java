@@ -7,6 +7,7 @@ public class Generator {
 	private final PositionGenerator positionGenerator;
 	private final InstructionGenerator instructionGenerator;
 	private final Solver solver;
+	private AssignmentInputPrinter printer;
 
 	public Generator(PositionGenerator positionGenerator, InstructionGenerator instructionGenerator, Solver solver) {
 		this.positionGenerator = positionGenerator;
@@ -14,12 +15,18 @@ public class Generator {
 		this.solver = solver;
 	}
 
+	public void setPrinter(AssignmentInputPrinter printer) {
+		this.printer = printer;
+	}
 
 	public void generateCases() {
+		if (printer == null) {
+			throw new RuntimeException("Printer not set");
+		}
+
 		// TODO move to different place
 		Case c = generateCase(true, 5, 10, 3);
-		// TODO print case
-		AssignmentInputPrinter printer = new AssignmentInputPrinter();
+
 		printer.print(c);
 	}
 

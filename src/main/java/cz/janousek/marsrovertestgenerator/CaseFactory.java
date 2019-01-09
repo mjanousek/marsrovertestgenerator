@@ -8,6 +8,7 @@ class CaseFactory {
     private int mapSize = 5;
     private Position startPosition;
     private Direction startDirection;
+    private Position endPosition;
     private List<Position> stones = new ArrayList<>();
     private final InstructionFactory iFactory = new InstructionFactory();
 
@@ -29,6 +30,13 @@ class CaseFactory {
         return this;
     }
 
+    public CaseFactory setEndPosition(int x, int y) {
+        endPosition = new Position(x, y);
+
+        return this;
+    }
+
+
     public CaseFactory addStone(int x, int y) {
         stones.add(new Position(x, y));
 
@@ -49,10 +57,13 @@ class CaseFactory {
         }
 
         Solver solver = new Solver();
-
         Configuration configuration = new Configuration(mapSize, startPosition, startDirection, iFactory.getResult(), stones);
-        Position endPosition = solver.computeFinalPositions(configuration);
 
-        return new Case(configuration, endPosition);
+        Position _endPosition = endPosition;
+        if (_endPosition == null) {
+            _endPosition = solver.computeFinalPositions(configuration);
+        }
+
+        return new Case(configuration, _endPosition);
     }
 }

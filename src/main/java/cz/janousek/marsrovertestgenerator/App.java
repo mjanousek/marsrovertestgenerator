@@ -3,22 +3,22 @@ package cz.janousek.marsrovertestgenerator;
 public class App {
 
 	public static void main(String[] args) {
-		/*InstructionGenerator instructionGenerator = new RandomInstructionGenerator();
-		PositionGenerator positionGenerator = new RandomPositionGenerator();
-		Solver solver = new Solver();
-		Generator g = new Generator(positionGenerator, instructionGenerator, solver);
-		g.generateCases();
-		*/
-
 		AssignmentInputPrinter printer = new AssignmentInputPrinter();
-		printer.setStrategy(new FilePrinterStrategyImpl("C:\\devel\\marsrovertestgenerator\\out\\files\\"));
+		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\"));
 
 		singleStepTest(printer);
+		turningDoesNotMoveRover(printer);
 		straightMovementAcrossMap(printer);
 		cannotMoveThroughStone(printer);
 		cannotMoveOutsideTheMap(printer);
 		circleAroundMap(printer);
 
+		InstructionGenerator instructionGenerator = new RandomInstructionGenerator();
+		PositionGenerator positionGenerator = new RandomPositionGenerator();
+		Solver solver = new Solver();
+		Generator g = new Generator(positionGenerator, instructionGenerator, solver);
+		g.setPrinter(printer);
+		g.generateCases();
 	}
 
 	private static void singleStepTest(AssignmentInputPrinter printer) {
