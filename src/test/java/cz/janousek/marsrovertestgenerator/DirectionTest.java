@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DirectionTest {
 
 	@Test
-	void turnRightNorthWithnoutTurnTest() {
+	void turnRightNorthWithoutTurnTest() {
 		Direction init = Direction.N;
 		Direction result = Direction.turnRight(init, 0);
 
@@ -16,7 +16,7 @@ class DirectionTest {
 	}
 
 	@Test
-	void turnRightWestWithnoutTurnTest() {
+	void turnRightWestWithoutTurnTest() {
 		Direction init = Direction.W;
 		Direction result = Direction.turnRight(init, 0);
 
@@ -25,7 +25,7 @@ class DirectionTest {
 	}
 
 	@Test
-	void turnRightSouthWithnoutTurnTest() {
+	void turnRightSouthWithoutTurnTest() {
 		Direction init = Direction.S;
 		Direction result = Direction.turnRight(init, 0);
 
@@ -34,7 +34,7 @@ class DirectionTest {
 	}
 
 	@Test
-	void turnRightEastWithnoutTurnTest() {
+	void turnRightEastWithoutTurnTest() {
 		Direction init = Direction.E;
 		Direction result = Direction.turnRight(init, 0);
 
