@@ -23,7 +23,8 @@ class AssignmentInputPrinterTest {
 		Configuration config = new Configuration(size, startPostion, startDirection, instructions, stones);
 		Position finalPosition = new Position(4,0);
 		AssignmentInputPrinter printer = new AssignmentInputPrinter();
-		String result = printer.generateOutput(config, finalPosition);
+		Case c = new Case(config, finalPosition);
+		String result = printer.generateOutput(c);
 
 		String expected =
 				"1,0\n" +
