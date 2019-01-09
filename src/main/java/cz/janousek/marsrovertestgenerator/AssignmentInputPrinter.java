@@ -1,12 +1,23 @@
 package cz.janousek.marsrovertestgenerator;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AssignmentInputPrinter implements Printer {
 
+	private PrinterStrategy strategy = new StdoutPrinterStrategyImpl();
+
+	public void setStrategy(PrinterStrategy strategy) {
+		this.strategy = strategy;
+	}
+
 	@Override
 	public void print(Case c) {
-		System.out.println(generateOutput(c));
+		try {
+			strategy.print(generateOutput(c));
+		}catch(IOException ex) {
+			System.err.println("Cannot write into file");
+		}
 	}
 
 	@Override
