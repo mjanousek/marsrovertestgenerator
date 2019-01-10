@@ -3,7 +3,7 @@ package cz.janousek.marsrovertestgenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-class CaseFactory {
+class CaseBuilder {
 
     private int mapSize = 5;
     private Position startPosition;
@@ -12,32 +12,32 @@ class CaseFactory {
     private List<Position> stones = new ArrayList<>();
     private final InstructionFactory iFactory = new InstructionFactory();
 
-    public CaseFactory setSize(int size) {
+    public CaseBuilder setSize(int size) {
         mapSize = size;
 
         return this;
     }
 
-    public CaseFactory setStartPosition(int x, int y) {
+    public CaseBuilder setStartPosition(int x, int y) {
         startPosition = new Position(x, y);
 
         return this;
     }
 
-    public CaseFactory setStartDirection(Direction direction) {
+    public CaseBuilder setStartDirection(Direction direction) {
         startDirection = direction;
 
         return this;
     }
 
-    public CaseFactory setEndPosition(int x, int y) {
+    public CaseBuilder setEndPosition(int x, int y) {
         endPosition = new Position(x, y);
 
         return this;
     }
 
 
-    public CaseFactory addStone(int x, int y) {
+    public CaseBuilder addStone(int x, int y) {
         stones.add(new Position(x, y));
 
         return this;

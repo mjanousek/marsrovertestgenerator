@@ -4,13 +4,19 @@ public class App {
 
 	public static void main(String[] args) {
 		AssignmentInputPrinter printer = new AssignmentInputPrinter();
-		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\"));
+		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\true\\"));
 
+		// Test that moving forward to each direction works
 		singleStepTest(printer);
+		// Turning the rover should not move the rover from the current position
 		turningDoesNotMoveRover(printer);
+		// Test multiple forward moves in each direction
 		straightMovementAcrossMap(printer);
+		// Test that rover cannot step on an inaccessible field
 		cannotMoveThroughStone(printer);
+		// Test that rover cannot move outside the map
 		cannotMoveOutsideTheMap(printer);
+		// Test more complicated movement - move rover around the map
 		circleAroundMap(printer);
 
 		InstructionGenerator instructionGenerator = new RandomInstructionGenerator();
@@ -18,12 +24,27 @@ public class App {
 		Solver solver = new Solver();
 		Generator g = new Generator(positionGenerator, instructionGenerator, solver);
 		g.setPrinter(printer);
-		g.generateCases();
+
+		g.generateCases(3, 5, 1);
+		g.generateCases(5, 10, 3);
+		g.generateCases(5, 10, 3);
+		g.generateCases(7, 20, 4);
+		g.generateCases(10, 30, 7);
+		g.generateCases(10, 30, 7);
+		g.generateCases(15, 25, 10);
+		g.generateCases(15, 25, 10);
+		g.generateCases(15, 25, 10);
+
+		printer = new AssignmentInputPrinter();
+		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\false\\"));
+
+		// Move rover from finish position - test that program does not return TRUE all the time
+		singleStepReturnsFalseTest(printer);
 	}
 
 	private static void singleStepTest(AssignmentInputPrinter printer) {
 		for(Direction direction : Direction.values()) {
-			CaseFactory factory = new CaseFactory();
+			CaseBuilder factory = new CaseBuilder();
 			factory
 					.setSize(5)
 					.setStartPosition(2, 2)
@@ -37,7 +58,7 @@ public class App {
 
 	private static void straightMovementAcrossMap(AssignmentInputPrinter printer) {
 		for(Direction direction : Direction.values()) {
-			CaseFactory factory = new CaseFactory();
+			CaseBuilder factory = new CaseBuilder();
 
 			factory
 					.setSize(5)
@@ -66,7 +87,7 @@ public class App {
 
 	private static void cannotMoveThroughStone(AssignmentInputPrinter printer) {
 		for(Direction direction : Direction.values()) {
-			CaseFactory factory = new CaseFactory();
+			CaseBuilder factory = new CaseBuilder();
 			factory
 					.setSize(5)
 					.setStartPosition(2, 2)
@@ -95,7 +116,7 @@ public class App {
 
 	private static void cannotMoveOutsideTheMap(AssignmentInputPrinter printer) {
 		for(Direction direction : Direction.values()) {
-			CaseFactory factory = new CaseFactory();
+			CaseBuilder factory = new CaseBuilder();
 			factory
 					.setSize(1)
 					.setStartPosition(0, 0)
@@ -108,7 +129,7 @@ public class App {
 	}
 
 	private static void turningDoesNotMoveRover(AssignmentInputPrinter printer) {
-		CaseFactory factory = new CaseFactory();
+		CaseBuilder factory = new CaseBuilder();
 		factory
 				.setSize(5)
 				.setStartPosition(2, 2)
@@ -121,7 +142,7 @@ public class App {
 	}
 
 	private static void circleAroundMap(AssignmentInputPrinter printer) {
-		CaseFactory factory = new CaseFactory();
+		CaseBuilder factory = new CaseBuilder();
 		factory
 				.setSize(5)
 				.setStartPosition(4, 4)
@@ -136,5 +157,20 @@ public class App {
 				.forward(4);
 
 		printer.print(factory.build());
+	}
+
+	private static void singleStepReturnsFalseTest(AssignmentInputPrinter printer) {
+		for(Direction direction : Direction.values()) {
+			CaseBuilder factory = new CaseBuilder();
+			factory
+					.setSize(5)
+					.setStartPosition(2, 2)
+					.setStartDirection(direction)
+					.setEndPosition(2, 2)
+					.getInstructionFactory()
+					.forward();
+
+			printer.print(factory.build());
+		}
 	}
 }

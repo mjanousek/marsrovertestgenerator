@@ -19,14 +19,13 @@ public class Generator {
 		this.printer = printer;
 	}
 
-	public void generateCases() {
+	public void generateCases(int mapSize, int instructionLength, int numberOfStones) {
 		if (printer == null) {
 			throw new RuntimeException("Printer not set");
 		}
 
 		// TODO move to different place
-		Case c = generateCase(true, 5, 10, 3);
-
+		Case c = generateCase(true, mapSize, instructionLength, numberOfStones);
 		printer.print(c);
 	}
 
