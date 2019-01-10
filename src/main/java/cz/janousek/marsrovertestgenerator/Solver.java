@@ -17,15 +17,10 @@ public class Solver {
 	}
 
 	boolean isAccessiblePosition(Position p, int size, List<Position> stones) {
-		if (
-				p.x < 0 || p.x >= size ||
-						p.y < 0 || p.y >= size ||
-						stones.contains(p)
-		) {
-			return false;
-		} else {
-			return true;
-		}
+		return isInsideTheMap(p, size) && !stones.contains(p);
 	}
 
+	private boolean isInsideTheMap(Position p, int mapSize) {
+		return p.x >= 0 && p.x < mapSize && p.y >= 0 && p.y < mapSize;
+	}
 }
