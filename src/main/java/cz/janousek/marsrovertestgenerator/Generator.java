@@ -40,7 +40,7 @@ public class Generator {
 		return c;
 	}
 
-	public void generate () {
+	public void generate() {
 		// Generate map size
 		// Generate start position
 		// Generate start direction

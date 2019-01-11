@@ -43,7 +43,7 @@ public class AssignmentInputPrinter implements Printer {
 		);
 	}
 
-	private String makePositionsOutput(List<Position> stones) {
+	protected String makePositionsOutput(List<Position> stones) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < stones.size(); i++) {
 			sb.append(makePositionOutput(stones.get(i)));
@@ -54,7 +54,7 @@ public class AssignmentInputPrinter implements Printer {
 		return sb.toString();
 	}
 
-	private String makePositionOutput(Position p) {
+	protected String makePositionOutput(Position p) {
 		return String.format("%d,%d", p.x, p.y);
 	}
 }

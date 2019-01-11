@@ -3,8 +3,10 @@ package cz.janousek.marsrovertestgenerator;
 public class App {
 
 	public static void main(String[] args) {
-		AssignmentInputPrinter printer = new AssignmentInputPrinter();
-		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\true\\"));
+		//AssignmentInputPrinter printer = new AssignmentInputPrinter();
+		AssignmentInputPrinter printer = new TestMethodPrinter(true);
+		//printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\true\\"));
+		printer.setStrategy(new StdoutPrinterStrategyImpl());
 
 		// Test that moving forward to each direction works
 		singleStepTest(printer);
@@ -35,8 +37,9 @@ public class App {
 		g.generateCases(15, 25, 10);
 		g.generateCases(15, 25, 10);
 
-		printer = new AssignmentInputPrinter();
-		printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\false\\"));
+		printer = new TestMethodPrinter(false);
+		//printer.setStrategy(new FilePrinterStrategyImpl(System.getProperty("user.dir") + "\\out\\files\\false\\"));
+		printer.setStrategy(new StdoutPrinterStrategyImpl());
 
 		// Move rover from finish position - test that program does not return TRUE all the time
 		singleStepReturnsFalseTest(printer);

@@ -7,6 +7,7 @@ public class RandomInstructionGenerator implements InstructionGenerator {
 		for (int i = 0; i < length; i++) {
 			sb.append(Instruction.randomInstruction().name());
 		}
+
 		return sb.toString();
 	}
 }
