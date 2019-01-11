@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestMethodPrinter extends AssignmentInputPrinter {
 
-    private AtomicInteger counter = new AtomicInteger(1);
+    private static AtomicInteger counter = new AtomicInteger(1);
     public boolean expectedResult;
 
     public TestMethodPrinter(boolean expectedResult) {
