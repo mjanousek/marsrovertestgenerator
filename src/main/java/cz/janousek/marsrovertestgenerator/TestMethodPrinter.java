@@ -17,13 +17,13 @@ public class TestMethodPrinter extends AssignmentInputPrinter {
                 "\t@Test\n" +
                 "\tpublic void test%d() {\n" +
                 "\t\tString input =\n" +
-                "\t\t\t\"%s\"\n" +
+                "\t\t\t\"%s\" +\n" +
                 "\t\t\t\"\" +\n" +
                 "\t\t\t\"%s\" +\n" +
                 "\t\t\t\"\" +\n" +
-                "\t\t\t\"%d\"\n" +
+                "\t\t\t\"%d\" +\n" +
                 "\t\t\t\"\" +\n" +
-                "\t\t\t\"%s\"\n" +
+                "\t\t\t\"%s\" +\n" +
                 "\t\t\t\"\" +\n" +
                 "\t\t\t\"%s\" + \n" +
                 "\t\t\t\"\" + \n" +
