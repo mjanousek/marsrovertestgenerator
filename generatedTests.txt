@@ -1,0 +1,681 @@
+@Test
+	public void test1() {
+		String input =
+			"2,2" +
+			"" +
+			"N" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"1,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test2() {
+		String input =
+			"2,2" +
+			"" +
+			"E" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,3" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test3() {
+		String input =
+			"2,2" +
+			"" +
+			"S" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"3,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test4() {
+		String input =
+			"2,2" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,1" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test5() {
+		String input =
+			"2,2" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,2" + 
+			"" + 
+			"LLLLRR";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test6() {
+		String input =
+			"4,2" +
+			"" +
+			"N" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"0,2" + 
+			"" + 
+			"FFFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test7() {
+		String input =
+			"2,0" +
+			"" +
+			"E" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,4" + 
+			"" + 
+			"FFFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test8() {
+		String input =
+			"0,2" +
+			"" +
+			"S" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"4,2" + 
+			"" + 
+			"FFFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test9() {
+		String input =
+			"2,4" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,0" + 
+			"" + 
+			"FFFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test10() {
+		String input =
+			"2,2" +
+			"" +
+			"N" +
+			"" +
+			"5" +
+			"" +
+			"1,2" +
+			"" +
+			"2,2" + 
+			"" + 
+			"FFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test11() {
+		String input =
+			"2,2" +
+			"" +
+			"E" +
+			"" +
+			"5" +
+			"" +
+			"2,3" +
+			"" +
+			"2,2" + 
+			"" + 
+			"FFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test12() {
+		String input =
+			"2,2" +
+			"" +
+			"S" +
+			"" +
+			"5" +
+			"" +
+			"3,2" +
+			"" +
+			"2,2" + 
+			"" + 
+			"FFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test13() {
+		String input =
+			"2,2" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"2,1" +
+			"" +
+			"2,2" + 
+			"" + 
+			"FFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test14() {
+		String input =
+			"0,0" +
+			"" +
+			"N" +
+			"" +
+			"1" +
+			"" +
+			"" +
+			"" +
+			"0,0" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test15() {
+		String input =
+			"0,0" +
+			"" +
+			"E" +
+			"" +
+			"1" +
+			"" +
+			"" +
+			"" +
+			"0,0" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test16() {
+		String input =
+			"0,0" +
+			"" +
+			"S" +
+			"" +
+			"1" +
+			"" +
+			"" +
+			"" +
+			"0,0" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test17() {
+		String input =
+			"0,0" +
+			"" +
+			"W" +
+			"" +
+			"1" +
+			"" +
+			"" +
+			"" +
+			"0,0" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test18() {
+		String input =
+			"4,4" +
+			"" +
+			"N" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"4,4" + 
+			"" + 
+			"FFFFLFFFFLFFFFLFFFF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test19() {
+		String input =
+			"1,1" +
+			"" +
+			"N" +
+			"" +
+			"3" +
+			"" +
+			"1,0" +
+			"" +
+			"0,0" + 
+			"" + 
+			"FRBRL";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test20() {
+		String input =
+			"2,0" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"4,2;4,1;0,2" +
+			"" +
+			"1,1" + 
+			"" + 
+			"FBRLRFFFBF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test21() {
+		String input =
+			"2,3" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"3,4;4,0;3,0" +
+			"" +
+			"2,4" + 
+			"" + 
+			"BFRBLLLRFR";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test22() {
+		String input =
+			"4,2" +
+			"" +
+			"S" +
+			"" +
+			"7" +
+			"" +
+			"1,6;2,6;3,0;6,4" +
+			"" +
+			"1,2" + 
+			"" + 
+			"LFRRFRFFFLFRLRRRLFRR";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test23() {
+		String input =
+			"2,1" +
+			"" +
+			"W" +
+			"" +
+			"10" +
+			"" +
+			"9,5;7,7;2,4;1,8;4,9;4,1;0,8" +
+			"" +
+			"0,1" + 
+			"" + 
+			"FLBRFLLLBLRRBRFRFLLRBBRFLFLRLF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test24() {
+		String input =
+			"5,7" +
+			"" +
+			"E" +
+			"" +
+			"10" +
+			"" +
+			"9,4;7,9;0,7;9,6;2,4;4,1;2,8" +
+			"" +
+			"6,7" + 
+			"" + 
+			"FBLLRFFRLBLRFLRLRFBRLFRFRRLRFR";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test25() {
+		String input =
+			"10,14" +
+			"" +
+			"E" +
+			"" +
+			"15" +
+			"" +
+			"14,7;9,2;8,11;0,1;9,12;10,8;13,6;8,2;10,2;6,3" +
+			"" +
+			"11,14" + 
+			"" + 
+			"LRLLLFFLLRBFRBLRFBRFFLFFL";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test26() {
+		String input =
+			"5,13" +
+			"" +
+			"E" +
+			"" +
+			"15" +
+			"" +
+			"12,3;3,1;6,8;5,10;6,13;10,4;5,3;1,11;12,1;4,0" +
+			"" +
+			"1,14" + 
+			"" + 
+			"LFLLBRRFBFRRRBRLBLBFLBLFB";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test27() {
+		String input =
+			"6,10" +
+			"" +
+			"N" +
+			"" +
+			"15" +
+			"" +
+			"0,12;6,0;12,4;11,5;12,10;10,13;7,8;8,0;9,9;11,14" +
+			"" +
+			"8,11" + 
+			"" + 
+			"RRLRLBFRRFLBRFRFRFRFRLFLF";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "TRUE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test28() {
+		String input =
+			"2,2" +
+			"" +
+			"N" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "FALSE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test29() {
+		String input =
+			"2,2" +
+			"" +
+			"E" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "FALSE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test30() {
+		String input =
+			"2,2" +
+			"" +
+			"S" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "FALSE";
+		assertEquals(expectedOutput, actualOutput);
+	}
+
+	@Test
+	public void test31() {
+		String input =
+			"2,2" +
+			"" +
+			"W" +
+			"" +
+			"5" +
+			"" +
+			"" +
+			"" +
+			"2,2" + 
+			"" + 
+			"F";
+
+		Application application = new Application();
+		String actualOutput = application.runMethod(input);
+
+		String expectedOutput = "FALSE";
+		assertEquals(expectedOutput, actualOutput);
+	}
